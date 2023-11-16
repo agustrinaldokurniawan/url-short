@@ -1,6 +1,7 @@
-import { act, render, screen } from "@testing-library/react";
-import Home, { metadata } from "@/app/page";
+import { render, screen } from "@testing-library/react";
+import Home from "@/app/page";
 import { Metadata } from "next";
+import { metadata } from "@/app/layout";
 
 describe("Home Router", () => {
   it("should set correct metadata", async () => {
@@ -12,6 +13,7 @@ describe("Home Router", () => {
 
     expect(pageMetadata).toEqual(correctMetadata);
   });
+
   it("should contain url shortener title", () => {
     render(<Home />);
     const h5 = screen.getByRole("heading", {
